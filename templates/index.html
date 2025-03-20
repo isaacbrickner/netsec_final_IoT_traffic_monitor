@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Packet Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>IoT Device Packet Monitor</h1>
+        <p>Monitor suspicious web traffic for your home IoT devices!</p>
+    </header>
+
+    <main>
+        <h2>IoT Devices</h2>
+        <div class="iot-devices">
+            <h3>Simulated Devices:</h3>
+            <ul>
+                {% for device in iot_devices %}
+                    <li><strong>{{ device.name }}</strong> - IP: {{ device.ip }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <h2>Suspicious Packet Alerts</h2>
+        {% if alerts %}
+            {% for alert in alerts %}
+                <div class="alert">
+                    <p><strong>Timestamp:</strong> {{ alert.timestamp }}</p>
+                    <p><strong>Source IP:</strong> {{ alert.src_ip }}</p>
+                    <p><strong>Source MAC:</strong> {{ alert.src_mac }}</p>
+                    <p><strong>Destination IP:</strong> {{ alert.dest_ip }}</p>
+                    <p><strong>Destination MAC:</strong> {{ alert.dest_mac }}</p>
+                    <p><strong>Device Targeted:</strong> <span class="device-name">{{ alert.device_name }}</span></p>
+                    <p><strong>Message:</strong> {{ alert.message }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No suspicious packets detected.</p>
+        {% endif %}
+    </main>
+
+</body>
+</html>
