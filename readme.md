@@ -29,4 +29,3 @@ The **IoT Network Traffic Monitor** is a web app built with **Flask** and **Scap
     ```pip install -r requirements.txt```
 4. Run:
     ```python app.py```
-# netsec_final_IoT_traffic_monitor
