@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from scapy.all import sniff, IP, Ether, ARP, DNS, UDP
 import time
 import threading
-import socket  # Import socket module for reverse DNS lookup
+import socket 
 
 app = Flask(__name__)
 
