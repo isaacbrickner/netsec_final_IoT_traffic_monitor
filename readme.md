@@ -28,4 +28,4 @@ The **IoT Network Traffic Monitor** is a web app built with **Flask** and **Scap
 3. Install dependencies:
     ```pip install -r requirements.txt```
 4. Run:
-    ```python app.py```
+    ```python app.py``` you might need to do a `sudo` to run
